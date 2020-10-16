@@ -1,0 +1,322 @@
+<!--
+    Name: Grace Sanders
+    Pawprint: gesnkb
+    Date: 5/1/2020
+    Challenge: Final Project
+-->
+
+<!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <title> S.O.S Essential Oils </title>
+        <meta charset= "utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="jquery-3.4.1.min.js"></script>
+         <script src="jquery-ui.js"></script>
+        <script>
+            $(function(){
+             $("#footer").load("footer.html");
+            });  
+            
+            function Info(){
+            document.getElementById("info").innerHTML = "Loading...";
+            var xmlHttp = new XMLHttpRequest();
+            
+            xmlHttp.onreadystatechange = function() {
+			 if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+	         var response = xmlHttp.responseText;
+                 
+                 var info = document.getElementById("info");
+                 info.innerHTML= response;
+		  }
+            };
+            xmlHttp.open("GET", "http://ec2-3-19-32-89.us-east-2.compute.amazonaws.com/GesnkbFinalProject/Info.php", true);
+            xmlHttp.send();
+        }
+            function Submission() {
+        var x = document.forms["feedback"]["comment"].value;
+  if (x == "") {
+    alert("Must enter valid statement in order to submit");
+    return false;
+            }
+         }
+            $(function(){
+                $('#login').click(function(){
+                   $.post('login.php', {
+                       action: 'login',
+                       username: $("#username").val(),
+                       password: $("#password").val()
+                   }, function(data){
+                       $("#stage").html(data);
+
+
+                   });
+                   });
+                $('#logout').click(function(){
+                    $.post('login.php', {action: 'logout'}, function(data){
+                        
+                    });
+                });
+
+            });
+            $(function(){
+             $("#draggable").draggable();
+            });
+
+        </script>
+        <style>
+            body{
+                background-color: powderblue;
+            }
+            .Title{
+                font-family: "Trebuchet MS", cursive, sans-serif;
+                text-align: center;
+                margin: auto;
+                display:block;
+                 width: 60%;
+                right: auto;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                text-decoration: underline;
+                align-content: center;
+    
+            }
+            .footer{
+                padding: 20px;
+                font-size: 20px;
+                float: right;
+                background-color: lightpink;
+                width: 40%;
+                margin: auto;
+            }
+            #stage{
+                border: 1px solid black;
+                padding: 5px;
+                margin: 25px;
+                
+            }
+            
+            .MainWrap{
+     border: 6px solid;
+    border-color: black;
+   padding: 20px;
+    margin: auto; 
+    box-shadow: 10px 10px 8px #888888;
+    font-family: inherit;
+    width: 90%;
+    position: relative; 
+    display: flex; 
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    background-color: oldlace;
+                
+            }
+
+            .navbar{
+                
+                background-color: oldlace;
+                width: 30%;
+                height: 10px;
+                position: sticky;
+                margin:10px;
+                font-family:"Trebuchet MS", cursive, sans-serif;
+                text-align: center;
+                font-size: 40px;
+                
+            }
+            .DivWrap1{
+     border: 6px solid black;
+                border-radius: 5px;
+    padding: 20px;
+    margin: auto; 
+    box-shadow: 10px 10px 8px #888888;
+    font-family:"Trebuchet MS", cursive, sans-serif;
+    width: 70%;
+    position: relative; 
+    display: flex; 
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    background-color: lightpink;
+        float: left;
+        padding:20px;
+        height: 50%;
+  
+            }
+            .feedback{
+     border: 2px solid black;
+                padding: 20px;
+    margin: auto; 
+    box-shadow: 10px 10px 8px #888888;
+    font-family: inherit;
+    width: 50%;
+    position: relative; 
+    display: flex; 
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    background-color: lightpink;
+                border-radius: 5px;
+            }
+            
+            .video{
+           border: 6px solid;
+    border-color: black;
+    margin: auto; 
+                padding: 20px;
+    box-shadow: 10px 10px 8px #888888;
+    font-family: inherit;
+    width: 50%;
+    position: relative; 
+    display: flex; 
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    background-color: oldlace; 
+                border-radius: 5px;
+                
+            }
+            
+            .DivWrap3{
+     border: 6px solid black;
+    padding: 20px;
+    margin: auto; 
+    box-shadow: 10px 10px 8px #888888;
+    font-family:"Trebuchet MS", cursive, sans-serif;
+    width: 50%;
+    position: relative; 
+    display: flex; 
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    background-color: oldlace;
+                float: right;
+                padding:20px;
+                height: 50%;   
+                border-radius: 5px;
+            }
+            
+            .images{
+                width: 20%;
+    height: auto;
+    border-right: 10px double black;
+    float: left;
+            }
+            #videoStyle{
+                width="560";
+                height="315"
+                border="0";
+            }
+            p{
+                padding:10px; 
+            font-family:"Trebuchet MS", cursive, sans-serif;
+            }
+            .log{
+                float:right;
+/*                text-decoration: underline;*/
+                width: 25%;
+                height: auto;
+            }
+            #loggedIN{
+                float: right;
+/*                border: 1px solid black;*/
+                padding: 5px;
+                margin: 25px;
+                width: 25%;
+                height: auto;
+            }
+            
+        </style>
+    </head>
+    <body onload="Info()">
+        <div id= "stage" class="log"><h2 class="Title">Log in for some bonus info!</h2>
+        <input type= "text" id="username">
+            <input type="password" id ="password">
+            <button id="login">Login</button>
+
+            </div>
+
+
+        <div id="draggable" class="navbar"><a href="https://www.hopkinsmedicine.org/health/wellness-and-prevention/aromatherapy-do-essential-oils-really-work" target="_blank">Learn more</a></div>
+        <h1 class= "Title">S.O.S Essential Oils</h1>
+        <h2 id="info" class="Title"></h2>
+        <div class="MainWrap">
+            <p>To order a product, please contact Sara Sanders at 720-984-5741 or ss7403@outlook.com with your mailing address. Venmo, Paypal, and Zella are our current valid payment options.</p>
+            
+            <div class="DivWrap1">
+                
+            <ul>
+            <li>COMFORT: A soothing blend of helichrysum, eucalyptus, tea tree, frankincense and fractionated coconut oil to ease arthritic pain and pain after surgery. Apply directing to affected areas. 10 ml roller bottle $5.00</li>
+        
+             <li>CHILL: A stress relieving blend of vetiver, lemon, sweet orange, rosemary, chamomile, and fractionated coconut oil.  Perfect to use before meditating, yoga, or just when life feels overwhelming. Apply to the back of the neck or chest. 10 ml roller bottle  $5.00</li>
+    
+            <li>EXHALE: A refreshing blend of eucalyptus, marjoram, cypress, spruce, and peppermint.  Perfect for clearing up congestion when you come down with that nasty cold.  This blend comes as a roller bottle with fractionated coconut oil or undiluted for your diffuser and/or putting a couple of drops in a tissue and inhaling.  Apply roller bottle to chest or bottom of feet.10 ml roller bottle  $5.00 5 ml undiluted vial  $12.00</li>
+        
+            <li>SMILE: An uplifting blend of lemon, geranium, orange, cedarwood, bergamot, and fractionated coconut oil. This blend will turn that frown upside down.. 10 ml roller bottle  $5.00</li>
+
+
+            <li>RESOLVE:A calmative blend of chamomile, tea tree, thyme, lemongrass, vetiver, and fractionated coconut oil. This blend is perfect for soothing pain caused by inflammation.  Especially helpful for muscle injury and calming the symptoms of fibromyalgia. Apply directly to affected areas. 10 ml roller bottle  $5.00</li>
+
+
+            <li>MOVE: A relieving blend of chamomile, peppermint, rosemary, marjoram, lemongrass, vetiver, and fractionated coconut oil.  Perfect to ease those stiff joints.  Apply to affected areas. 10 ml roller bottle  $5.00</li>
+
+
+            <li>DREAM; A serene bland of orange, chamomile, lavender, and cedarwood. Perfect for helping you fall asleep or getting back to sleep. Be ready for some sweet dreams. Comes in a roller bottle with fractionated coconut oil which can be applied to the back of the neck or undiluted for your diffuser.10 ml roller bottle  $5.00 5 ml undiluted vial  $12.00</li>
+
+
+                <li>SERENITY: A blissful blend of orange, lavender, spearmint, rosemary, neroli, and cedarwood.  This blend is perfect to take that anxiety away!  It comes in a roller bottle with fractionated coconut oil to be applied to the back of your neck or wrists. Put undiluted Serenity in your diffuser and/or place a couple of drops in a tissue to inhale. 10 ml roller bottle  $5.00 5 ml undiluted vial  $12.00</li>
+
+                <li>BLESSING: A clarifying blend of rosemary, peppermint, lemon, basil, grapefruit, and myrrh. This is the perfect blend for resolving tension headaches and brain fog. Comes in a roller bottle with fractionated coconut oil which can be applied to the back of the neck or undiluted for your diffuser. Mix a couple of undiluted Blessing in a carrier oil and place directly on the temples.  Be sure to avoid the eyes.10 ml roller bottle  $5.00 5 ml undiluted vial  $12.00</li>
+
+                <li>WHOLE: An immune boosting woody’s blend of cinnamon, lemon, clove, rosemary, and eucalyptus. The perfect blend to guard against illness. Comes in a roller bottle with fractionated coconut oil to be applied to the back of the neck or bottom of feet or undiluted for your diffuser.  If you prefer a minty scent you can choose an immune supporting blend of oregano, thyme, melissa peppermint, eucalyptus, and myrrh.10 ml roller bottle  $5.00 5 ml undiluted vial  $12.00</li>
+
+                <li>RENEW: This invigorating shower sugar scrub is the perfect way to start your day. The perfect balance of bergamot, wintergreen, peppermint, cedarwood, avocado oil, and organic sugar will leave you with that spa feeling.  Store in the refrigerator for up to 4 weeks.4 oz jar  $5.00</li>
+
+
+                <li>NOURISH HAND CREAM: A nourishing hand cream of jojoba oil, coconut oil, vitamin E, emulsifier wax, germall preservative, tea tree, lavender, and grapefruit. Can also choose an essential oil blend of geranium, sandalwood, and lavender.  1 oz jar $5.00 or 4 oz jar for $12.50</li>
+
+                <li>HAND SANATIZER: Clean those hands when soap and water aren’t available with this wonderful blend of organic cane alcohol, aloe vera, vitamin E, glycerin, and coconut oil.  Can choose from lavender, tea tree, and lemon or cinnamon, clove, lemon, orange, eucalyptus,and rosemary.  Shake well before use.  Some aloe vera gel may settle to the bottom.  2 oz spray bottle $5.00</li>
+
+
+                <li>BODY BUTTER: Treat dry skin with this luxurious whipped body butter.  You will fall in love with this wonderful blend of shea butter, almond oil, coconut oil, vitamin E, sandalwood, rose,and neroli.  1 oz jar for $5.00 or 4 oz jar $15.00</li>
+
+
+                <li>REJUVENATING FACE CREAM: Your face will love this face cream with avocado oil, shea butter, emulsifier wax, and germall preservative.  Choose a blend for anti-aging( frankincense, helichrysum, lavender, rose), dry skin (myrrh, lavender, and sandalwood), or normal skin (frankincense, lavender, tea tree).  1 oz jar $6.00</li>
+
+
+                <li>LIP BALM: A nourishing blend of beeswax, coconut oil, almond oil, and vitamin E.  Choose from grapefruit, wintergreen, lavender, rose, or peppermint.  $2.00</li>
+
+                <li>RELAXING BATH SALTS: A wonderful blend of ancient sea salt, sandalwood, neroli, and clary sage will melt away the day’s stress. 4 oz jar $5.00. Enough for two soaks. Epsom salt blend available.</li>
+
+
+                <li>Sweet Orange and Honey Bar Soap Made with Goat Milk: $3.00 per bar</li>
+
+
+            </ul>
+         <p><br>Set up a 30 minute consultation to create the perfect blend for your specific needs!  $15.00- includes one roller bottle.  Call, text, or email to set up an appointment or to place an order. Contact information is at top of page.</p>
+                <h1 class="Title">Product List</h1>
+        </div>
+            
+        <div>
+            <img class="images" src="Sanatizer.JPG" alt="">
+            <img class="images" src="Soap.jpg" alt="">
+            <img class="images" src="3Oils.JPG" alt="">
+            <img class="images" src="2Oils.JPG" alt="">
+            <img class="images" src="Lotion.JPG" alt="">
+           </div>
+            
+            </div>
+        <div class="MainWrap">
+        <div class="video">
+            <iframe id="videoStyle" src="https://www.youtube.com/embed/N4ASF5FfRnU" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+             <h2 class="Title">Here's a little bit about Essential Oils</h2>
+            </div>
+        <div class="feedback">
+            <form name="feedback" action="comments.php" onsubmit="return Submission()" method="post">
+            Comment: <input type="text" name="comment">
+                <input type="submit" value="Submit">
+                <h2 class="Title">Leave a review, request a product, or just give a suggestion! We love to hear your feedback.</h2>
+            </form>
+            </div>
+            
+        </div>
+        <div class="footer" id="footer"></div>
+    
+    </body>
+</html>
