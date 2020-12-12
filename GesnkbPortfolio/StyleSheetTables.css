@@ -1,0 +1,129 @@
+body{
+background-color: palevioletred; 
+}
+
+#navbar{
+                
+                background-color: palevioletred;
+                width: 100%;
+                height: auto;
+    position: fixed;
+}
+.myname{
+                color: black;
+                margin: 10px;
+                font-family:inherit;
+                font-size: 30px;
+}
+.header{
+                text-align: center;
+                font-family: inherit;
+                background-color: oldlace;
+                color: black;
+                border: 1px solid black;
+                width: 7px;
+        
+}
+.tableHeader{
+                
+                background-color: oldlace;
+                color: black;
+                border: 1px solid black;
+    text-align: center;
+    font-family: inherit;
+            }
+.table{
+  border-collapse: collapse;
+                width: 100%;
+    font-family: inherit;
+                border: 1px solid black;
+    text-align: center;
+}
+
+.tableheaders{
+    background-color: oldlace;
+                color: black;
+                border: 1px solid black;
+    font-family: inherit;
+}
+.Row{
+    border: 1px solid black;
+}
+
+#Dep1{
+    background-color: pink;
+    border: 1px solid black;
+}
+#Dep2{
+    background-color:lightpink;
+    border: 1px solid black; 
+    text-align: center;
+}
+
+#DivWrap{
+    
+              border: 6px solid;
+              border-color: black;
+              width: 50%; 
+              text-align: center;
+    margin: auto;
+    box-shadow: 10px 10px 8px #888888;
+    font-family: inherit;
+    
+}
+.group:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+.Column1{
+    width: 30%;
+    display: inline-block;
+    float: left;
+}
+.Column2{
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    float: left;
+}
+.Column3{
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+    float: left;
+}
+.ProfPic{
+    border: 6px solid black;
+    margin: 10px;
+    width: 90%;
+    position: relative;
+}
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+    border-color: black;
+    width: auto;
+} 
+
+.every{
+    background-color:antiquewhite;
+    border-bottom: 1px solid black;
+                padding: 20px;
+                text-align: center;
+}
+.other{
+    background-color:beige
+}
+
+#Tiger{
+    float: left;
+    position: relative;
+    width: 150px;
+    margin: 10px;
+}

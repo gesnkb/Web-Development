@@ -1,0 +1,130 @@
+.DivWrap1{
+     border: 6px solid;
+    border-color: black;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin: auto; 
+    box-shadow: 10px 10px 8px #888888;
+    font-family: inherit;
+    width: 90%;
+    position: relative; 
+    display: flex; 
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    background-color: transparent;
+}
+.header{
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+
+body{
+    background: oldlace;
+}
+
+.linkBack{
+    text-align: left;
+    
+}
+.Column1{
+    width: 30%;
+    display: inline-block;
+    float: left;
+}
+#Title{
+    background-color: pink;
+    border: 1px solid black;
+}
+form{
+text-align: center;
+}
+
+.tableHeader{
+                
+                background-color: transparent;
+                color: black;
+    justify-content: center;
+    text-align: center;
+    font-family: inherit;
+            }
+table{
+  border-collapse: collapse;
+                width: 100%;
+    font-family: inherit;
+                border: 1px solid black;
+    text-align: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.dark{
+    background-color: lightgray;
+    border-color: black;
+    color: gray;
+}
+.light{
+    background-color: oldlace;
+}
+.button1{
+    border-color: green;
+}
+.button2{
+    border-color: red;
+}
+.Error{
+    margin: auto;
+}

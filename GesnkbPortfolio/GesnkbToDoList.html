@@ -1,0 +1,134 @@
+<!--
+Name: Grace Sanders
+Pawprint: gesnkb
+Date: 2/25/2020
+Challenge: To-Do list S20
+-->
+<!DOCTYPE html>
+<html lang= "en">
+  <head>
+    <title>To Do List</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="StyleSheetToDo.css"/>
+    
+      <script>
+          function myFunction(){
+            
+              var get;
+              var get2;
+              var get3;
+              var checkM = "&#x2713";
+              
+              get = document.getElementById("title").value;
+              console.log(get);
+              
+              get2 = document.getElementById("type").value;
+              console.log(get2);
+              
+              get3 = document.getElementById("Date").value;
+              console.log(get3);
+              
+              if(get == '' || get2== '' || get3 == ''){
+                document.getElementById("errorM").innerHTML= "All fields are required";
+              }
+              else{
+              
+              document.getElementById("Here").innerHTML= 
+              document.getElementById("Here").innerHTML + "<tr> <td>" + get + "</td>  <td>" + get2 +"</td> <td>" + get3 + "</td> <td>" + checkM + " </td> </tr>";
+                  
+                  document.getElementById("errorM").innerHTML= ""
+                  
+                  document.getElementById("Reset").reset();
+              }
+              
+              if(checkM = onclick){
+                  document.getElementById("Reset").deleteRow();
+              }
+          }
+          
+          function deleteSingle(){
+              document.getElementById("myTable").deleteRow();
+          }
+          
+          function removeAll(){
+     document.getElementById("Here").innerHTML = "";
+              
+}
+          function DoubleClick() {
+        var text;
+        var Name = prompt("Would you like to change the Name:", "To Do List");
+        if(Name == null || Name ==""){
+            text = "To Do List";
+        }
+              else{
+                  text = Name; 
+              }
+            document.getElementById("doubleC").innerHTML = text; 
+          }
+          function changeColor(color) { 
+                document.body.style.background = color; 
+            } 
+         function Dark(){
+           var dark = document.body;
+             dark.classList.toggle("dark");
+             
+         }
+          
+          </script>
+  </head>
+    
+  <body>
+      <h1 class= "linkBack">Back to Projects</h1>
+      
+      <label class="switch">
+  <input type="checkbox" value = "Theme: light" onclick="Dark()">
+  <span class="slider"></span>
+</label>
+      
+      <h2 class= "header" id="doubleC" ondblclick="DoubleClick()"> To Do List</h2>
+      <div class= "DivWrap1">
+      <table>
+         <thead>
+           <tr>
+                    
+                <th class="tableHeader">Title</th>
+                    
+                <th class="tableHeader">Type</th>
+                    
+                <th class="tableHeader">Date</th>    
+                    
+                <th class="tableHeader">Action</th>
+                    
+                               
+                </tr>
+          </thead> 
+          <tbody id="Here">
+          
+          </tbody>
+    </table>
+      </div>
+      <p id= "errorM"><p>
+      <div class="DivWrap1">
+          <h2 class="header">Things to do</h2>
+      <form id= Reset>
+          <label for="title">Title:</label>
+          <input type="text" id="title" name= "title">
+          
+          <label for="type">Select Type</label>
+          <select id="type">
+          <option value="homework">Homework</option>
+          <option value="project">Project</option>
+          <option value="test">Test</option>
+          </select>
+          
+          <input type="date" id="Date">
+          
+          <input class="button1" type="button" id= "add" value="Add to Checklist" onclick="myFunction()">
+          <input class="button2" type="button" value="Remove All" onclick="removeAll()">
+      </form>
+          
+          
+          
+      </div>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+<!--
+    Name: Grace Sanders
+    Pawprint: gesnkb
+    Date: 2/5/2020
+    Challenge 3: Multi-Column Challenge
+--> 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Multi Column Layout</title>
+        <meta charset= "utf-8">
+        <style> 
+            .Titles{
+                text-align: center;
+                font-family: inherit;
+            }
+            #navbar{
+                
+                background-color: palevioletred;
+                width: auto;
+                height: auto;
+                color: palevioletred;
+            }
+            .myname{
+                color: black;
+                margin: 10px;
+                font-family:inherit;
+                font-size: 30px;
+            }
+            .Anycolumn{
+                
+                display: inline-block;
+                float: left;    
+            }
+            
+            #DivWrap{
+              width: 1101px;
+              border: 6px solid;
+              border-color: black;
+              padding: 8px;
+              border-radius: 20px; 
+              margin: auto;
+              text-align: center;
+        
+            
+            }
+            
+            .column1{
+                float: left;
+                padding: 20px;
+                margin: 20px;
+                width: 241px;
+                height: 390px;
+                border: 8px;
+                border-style: solid;
+                border-color: black;
+                text-align: center;
+                background-color: palevioletred;
+                font-family: inherit;
+                
+            }
+            .column2{
+                float: left;
+                padding: 20px;
+                margin: 20px;
+                border: 8px;
+                border-color: black;
+                height: 390px;
+                text-align: center;
+                border-style: solid;
+                background-color: palevioletred;
+                width: 200px;
+                font-family: inherit;
+            
+            }
+            
+            .group:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            .RowWrap{
+                width: 428px;
+                margin: 20px;
+                background-color: palevioletred;
+                margin-bottom: 20px;
+                border-radius: 20px;
+            }
+            
+            body{
+                background-color:oldlace;
+            
+            }
+            
+            #toprow{
+                height: 190px;
+                width: 372px;
+                padding: 20px;
+                border: 8px solid;
+                
+            }
+            
+            #bottomrow{
+                height: 120px;
+                width: 372px;
+                padding: 20px;
+                border: 8px solid;
+                
+                
+            }
+            .Listings{ 
+                text-align: left;
+                font-family: inherit;
+            }
+        </style>
+    </head>
+    <body>
+        <div id= "navbar"> 
+            <a class= "myname" href="GesnkbPortfolio.html"> Grace Sanders </a> <a class= "myname" href="GesnkbColumns.html"> Skills</a> <a class="myname" href="GesnkbTables520.html">Classes Taken</a><a class= "myname" href="GesnkbProjectsS20.html">Projects</a>
+        </div>
+        
+        <div id= "DivWrap" class= "group"> 
+        <h2 class= "Titles"> Skills </h2>
+            
+        <div>
+        <!-- Main wrapper. This div should wrap all columns, row wrapper, and title header -->
+        <div class= "column1 Anycolumn">
+                <h2 class= "Titles"> Languages </h2>
+            <ul class="Listings">
+            <li>C</li>
+            <li>C#</li>
+            <li>HTML</li>
+            </ul>
+                
+            </div>
+            
+            <!-- content width: 241px
+                physical width calculation:
+                content width: 241 +
+                padding left: 20px +
+                padding right: 20px +
+                border left: 8px +
+                border right: 8px +
+                margin left: 20px +
+                margin right: 20px +
+                
+                = 337px
+                -->
+            
+            
+            <!-- Left Column -->
+            <!-- Put left column physical width calculations here: 
+
+
+            -->
+       
+            <div class= "Anycolumn"> 
+                <div class= "RowWrap" id="toprow"> 
+                    <h2 class= "Titles"> Course Work </h2>
+                    <ul class="Listings">
+                    <li>Web Development</li>
+                    <li>Databases and Information Systems</li>
+                    <li>Networking Technologies</li>
+                    <li>Media and Video Editing</li>
+                     <li>Alogirthms and Design</li>
+                    </ul>
+                </div>
+                <div class= "RowWrap" id="bottomrow">
+                    <h2 class="Titles"> Other</h2>
+                    <ul class="Listings">
+                    <li>Society of Women Engineers</li>
+                    <li>Mizzou Sustainability Week Exec Board</li>
+                    </ul>
+                
+                </div>
+                
+        <!-- content width: 428px
+                physical width calculation:
+                content width: 428 +
+                padding left: 20px +
+                padding right: 20px +
+                border left: 8px +
+                border right: 8px +
+                margin left: 20px +
+                margin right: 20px +
+
+                = 524px
+                -->
+                
+            </div>
+        
+        
+            
+            
+            <!-- Row Wrapper. This div will contain two rows -->
+            <!--Put middle column physical width calculations here:
+
+
+            -->
+            <div class= "column2 Anycolumn">
+            <h2 class= "Titles"> Technologies </h2>
+               <ul class="Listings">
+            <li>Visual Studio</li>
+            <li>Putty</li>
+            <li>WireShark</li>
+            <li>Brackets</li>
+            <li>Microsoft Adobe</li>
+            </ul>
+            </div>
+            
+            <!-- content width: 144
+                physical width: 
+                padding left: 20px +
+                padding right: 20px +
+                border right: 8px +
+                border left: 8px +
+                margin left: 20px +
+                margin right: 20px +
+
+                = 240px
+                -->
+            
+            <!-- Right Column -->
+            <!--Put right column physical width calculations here: 
+
+
+            -->
+            <div> </div>
+            </div>
+        </div>
+        <p> Last Updated: 2/8/2020</p>
+    </body>
+</html>
+    
